@@ -75,7 +75,6 @@ python run train.py
 
 ### Phenotypic drug screening  
 Phenotypic screening on your drugs:  
-Here we show an example of predicting a given pair of drug and cell line.  
 This function allows customized inputs, as long as following the format of INPUT "smiles" & "COSMIC_ID"  
 Note that "COSMIC_ID" must be contained in the cell line dataset [Data_info](https://github.com/zengydd/ProphDR/tree/main/data_collect).  
 ```
