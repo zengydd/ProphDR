@@ -65,7 +65,7 @@ exp_cnv = os.path.join(unify_dir, 'omics_std/omics_stk_dict_exp_cnv.pkl')
 
 if __name__ == '__main__':
     set_random_seed()
-    model_dir = os.path.join(root, 'Models/')
+    model_dir = os.path.join(root, 'ckpt/')
 
     task = 'IC50'
     method = 'only2'

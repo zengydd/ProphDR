@@ -385,7 +385,7 @@ class gbz_main_cross(object):
         metric_result, loss = self.validate(test_generator, self.model)
         return metric_result, loss
 
-    def pred(self, smiles_list, cosmic_id_list, pt_path=os.path.join(root, 'Models/checkpoint.pt'), drug_id=0):
+    def pred(self, smiles_list, cosmic_id_list, pt_path=os.path.join(root, 'ckpt/checkpoint.pt'), drug_id=0):
         with torch.no_grad():
             score_list = []
             smi_list = []
