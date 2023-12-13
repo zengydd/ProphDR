@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 import torch
 from utils.mydata import load_pickle
-from Models.k_bert.atom_embedding_generator import bert_atom_embedding
+from k_bert.atom_embedding_generator import bert_atom_embedding
 
 root = os.getcwd()
 data_dir = os.path.join(root, 'data_collect/')

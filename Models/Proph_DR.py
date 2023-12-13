@@ -36,7 +36,7 @@ from utils.mydata import mydata, dataset_split
 from utils.Drug_encode import encoder_D_pred, kbert
 from Models.RCCA_ca import CCNet
 from Models.cross_attention_dual import cross_EncoderBlock_G, cross_EncoderBlock_D
-from Models.k_bert.atom_embedding_generator import bert_atom_embedding
+from k_bert.atom_embedding_generator import bert_atom_embedding
 
 torch.set_default_dtype(torch.float32)
 config = './utils/train_res.yml'
@@ -137,14 +137,8 @@ class Predictor(nn.Module):
     def forward(self, drug_id, encode_D, f_G, valid_lens, cosmic_id):
         torch.cuda.empty_cache()
         # cosmic_id_list = cosmic_id.cpu().numpy().tolist()
-  
         # drug_id_list = list(D_ids.cpu())
-        # valid_lenD_list = drug_smiles_df.loc[drug_id_list]['valid_lens'].to_list()
-        # valid_lenD_list = [i+1 for i in valid_lenD_list]
-        # valid_lens = torch.tensor(valid_lenD_list)
-        # encode_D_list = kbert(drug_id_list)
-        # encode_D = torch.stack([torch.tensor(arr) for arr in encode_D_list])
-        
+
         v_D = encode_D.detach().to(self.device).float()
         f_G = f_G.detach().to(self.device)
         cls_token = self.cls_token.repeat(f_G.shape[0], 1, 1).to(self.device)
@@ -393,17 +387,17 @@ class gbz_main_cross(object):
             for smiles in smiles_list:
                 smi_list.append(smiles)
                 for cosmic_id in cosmic_id_list:
-                    cell_list.append(cosmic_id)
+                    cell_list.append(str(cosmic_id))
                     self.model = self.model.to(self.device)
                     omic_f = self.omic_encode_dict[str(cosmic_id)]
                     omic_f = omic_f.unsqueeze(0)
                     self.model.load_state_dict(torch.load(pt_path, map_location='cpu')['model_state_dict'])
                     encode_D_pred, valid_lens = encoder_D_pred(smiles)
                     score = self.model(drug_id, encode_D_pred, omic_f, valid_lens, cosmic_id)
-                    score = score.flatten().to(self.device)
-            score_list.append(score)
+                    score = score.flatten().to(self.device).cpu().numpy().item()
+                    score_list.append(score)
             res = pd.DataFrame()
-            res['LN(IC50)'] = score_list
+            res['LN(IC50)'] = pd.Series(score_list)
             res['smiles'] = smi_list
             res['cosmic'] = cell_list
         return res
