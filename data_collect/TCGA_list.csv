@@ -1,0 +1,31 @@
+abbreviations,TCGA_DESC
+ACC,Adrenocortical carcinoma
+ALL,Acute lymphoblastic leukemia
+BLCA,Bladder Urothelial Carcinoma
+BRCA,Breast invasive carcinoma
+CESC,Cervical squamous cell carcinoma and endocervical adenocarcinoma
+CLL,Chronic Lymphocytic Leukemia
+COREAD,Colon adenocarcinoma and Rectum adenocarcinoma
+DLBC,Lymphoid Neoplasm Diffuse Large B-cell Lymphoma
+ESCA,Esophageal carcinoma
+GBM,Glioblastoma multiforme
+HNSC,Head and Neck squamous cell carcinoma
+KIRC,Kidney renal clear cell carcinoma
+LAML,Acute Myeloid Leukemia
+LCML,Chronic Myelogenous Leukemia
+LGG,Brain Lower Grade Glioma
+LIHC,Liver hepatocellular carcinoma
+LUAD(NSCLC),Lung adenocarcinoma
+LUSC,Lung squamous cell carcinoma
+MB,Medulloblastoma
+MESO,Mesothelioma
+MM,Multiple Myeloma
+NB,Neuroblastoma
+OV,Ovarian serous cystadenocarcinoma
+PAAD,Pancreatic adenocarcinoma
+PRAD,Prostate adenocarcinoma
+SCLC,Small Cell Lung Cancer
+SKCM,Skin Cutaneous Melanoma
+STAD,Stomach adenocarcinoma
+THCA,Thyroid carcinoma
+UCEC,Uterine Corpus Endometrial Carcinoma

@@ -1,0 +1,29 @@
+1\ Hoe to use?
+Please replace the "/ProphDR/Data_collect" with the downloaded "Data_collect"
+
+
+2\ Data information?
+"res_df.csv": Reponse data on 94,174 pair of drug-cell-lines, used for regression task mainly.
+"unified_thred_Iorio.csv": Reponse data for classification task under the thresholed of Iorio (ln(IC50) binarization).
+"unified_thred_only2.csv": Reponse data for classification task under the thresholed of '-2' (ln(IC50) binarization).
+
+"ProphDR/data_collect/unify/drug_std":
+All the drug information is contained in drug_smiles_k_bert.csv
+Drug features are in atom_pad.pkl and atom_features_dict.pkl
+
+"ProphDR/data_collect/unify/omics_std":
+Contains single-omics data: cnv/exp/mut_dict.pkl
+Contains stacked multi-omics data (all 3 types): omics_stk_dict.pkl
+Contains stacked combinations of 2 types of omics data (permutation comnbination): exp_cnv/mut_cnv/mut_exp.pkl
+Note that stacked data are stacked by aligning the genes.
+
+
+Omics_info: The presence of a gene mutation was encoded as 1 and absence as 0, we employed 0~1 normalization for the CNV and EXP data so as to avoid assigning more weight to data with larger values. 
+Genes: The datasets we collected involve 714 genes. All of these genes are recognized as the most likely drivers of human cancer, according to the COSMIC Cancer Gene Census (CGC).
+Cancers: 33 categories marked cancer types in the GDSCv2 dataset (3 of them were referred to as ‘Unclassified’, and ‘Other’ or ‘None’ were discarded). Consequently, 30 well-established widely studied TCGA cancer types were involved.
+
+We collected the CDR information and the corresponding genomics data for 94,174 pairs of drugs and cell-lines, involving 184 compounds and 568 cancer cell lines across 30 cancer types as defined by The Cancer Genome Atlas Program (TCGA)(Liu et al., 2018), by integrating two most commonly used public databases: the Cancer Cell Line Encyclopedia (CCLE)(Barretina et al., 2012) and the Genomics of Drugs Sensitivity in Cancer (GDSC)(Yang et al., 2013).
+Specifically, the cancer drug response information was obtained from GDSC, an ongoing project and is being updated regularly, which characterizes cancer cell lines and their responses for chemical compounds, including small molecule chemotherapy drugs and small molecule kinase inhibitors (SMKIs). The CDR is fitted with the sigmoid curve, and is evaluated by the natural log-normalized half-maximal inhibitory concentration ln(IC50). In this study, we utilized the latest published dataset GDSCv2 following the official recommendation, where all the compounds were screened using the CellTiter-Glo® Luminescent Cell Viability Assay. Note that not all permutations of drug-cell line pairs are screened, leaving a blank of 10,338 CDR data (~9.892% of the fully permutation combinations), referred to as the ‘Missing Response’ data in this study.
+Regarding the drug information, we filtered out 184 out of 295 drugs from GDSCv2 by excluding those without a PubChem ID, and then obtained the canonical SMILES representations using the RDKit (RDKit: Open-source cheminformatics. https://www.rdkit.org).
+For the multi-omics profiles of cancer cell lines, we gathered 3 types of omics data including gene mutation data (MUT), gene expression data (EXP) and copy number variation data (CNV) from the latest version (CCLE_gene_cn_22Q2) of the CCLE database. 
+
