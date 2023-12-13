@@ -4,3 +4,4 @@ result/*
 .idea/workspace.xml
 *.iml
 .xml
+*__pycache__*
