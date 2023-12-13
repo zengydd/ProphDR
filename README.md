@@ -1,12 +1,12 @@
 ## ProphDR: AI-powered deep phenotyping reveals biochemical determinants in variable cancer drug response   
 ![image](https://github.com/zengydd/ProphDR/blob/main/IMG/Fig0_abstract.png)  
-<<<<<<< HEAD
+
 ### ⭐ Highlight
 * ProphDR is specifically designed to intuitively prophesy biochemical determinants in various drug response prediction.
 * ProphDR allows customized multi-omics combinations inputs for users to try, flexible and scalable at any combinations: e.g. mutation-only or mutation+expression ...
-=======
+
 ProphDR is specifically designed to intuitively prophesy biochemical determinants in various drug response prediction. 
->>>>>>> parent of c7f0180 (Merge branch 'main' of https://github.com/zengydd/ProphDR)
+
   
 💡ProphDR puns on "A PROfessor of PHenotyping makes PROPHecy for biochemical determinants triggering cancer Drug Response". 😆
 ### Model overview
@@ -63,6 +63,7 @@ exp_params = {
     }
 ```
 #### Test
+If you wanna run our trained model, please download ckpt: [ProphDR_ckpt](https://drive.google.com/file/d/15bzGyW5V6JNSypt4f86XJOPHnr_1OHmg/view?usp=drive_link)   
 ```
 python run test.py
 ```
