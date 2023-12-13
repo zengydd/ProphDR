@@ -76,7 +76,7 @@ python run train.py
 ### Phenotypic drug screening  
 Phenotypic screening on your drugs:  
 This function allows customized inputs, as long as following the format of INPUT "smiles" & "COSMIC_ID"  
-Note that "COSMIC_ID" must be contained in the cell line dataset [Data_info](https://github.com/zengydd/ProphDR/tree/main/data_collect).  
+Note that "COSMIC_ID" must be contained in the cell line dataset [Cell_line_info](https://github.com/zengydd/ProphDR/tree/main/data_collect).  
 ```
 # Edit here:
 smiles = ['C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1', 'CS(=O)(=O)CCNCc1ccc(-c2ccc3ncnc(Nc4ccc(OCc5cccc(F)c5)c(Cl)c4)c3c2)o1']
