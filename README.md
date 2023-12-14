@@ -45,7 +45,9 @@ https://depmap.org/portal/download/all/
 https://cancer.sanger.ac.uk/cosmic
 
 ### Run ProphDR
-Here we show an example of using all 3 types of multi-omics data, for other inputs combinations, please edit the "exp_params".  
+1/ Preparation: Please put k_bert under Models: [k_bert](https://drive.google.com/file/d/1h-Ve-2fpYH6P8epfsHezJsxK2PRKFnc2/view?usp=drive_link)    
+2/ Customized parameters:  
+Here we show an example of using all 3 types of multi-omics data, for other inputs combinations or tasks, please edit the "exp_params".  
 ```
 # @@@@@@@@@@@@@@@@@@@
 # task: IC50 or binary
