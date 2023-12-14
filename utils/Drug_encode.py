@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 import torch
 from utils.mydata import load_pickle
-from k_bert.atom_embedding_generator import bert_atom_embedding
+from Models.k_bert.atom_embedding_generator import bert_atom_embedding
 
 root = os.getcwd()
 data_dir = os.path.join(root, 'data_collect/')
@@ -74,7 +74,7 @@ def pad_atom_file(drug_id_list):
         atom_feature_list.append(drug_a_f)
     return atom_feature_list
 
-def  kbert(drug_id_list):
+def kbert(drug_id_list):
     drug_encode_df = pd.read_csv(drug_std_dir + 'drug_smiles_k_bert.csv')
     feature_list = []
     for i, drug_id in enumerate(drug_id_list):

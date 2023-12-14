@@ -36,7 +36,7 @@ from utils.mydata import mydata, dataset_split
 from utils.Drug_encode import encoder_D_pred, kbert
 from Models.RCCA_ca import CCNet
 from Models.cross_attention_dual import cross_EncoderBlock_G, cross_EncoderBlock_D
-from k_bert.atom_embedding_generator import bert_atom_embedding
+from Models.k_bert.atom_embedding_generator import bert_atom_embedding
 
 torch.set_default_dtype(torch.float32)
 config = './utils/train_res.yml'
