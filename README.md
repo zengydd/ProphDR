@@ -34,19 +34,19 @@ pip install lifelines
 ```  
 
 ### Data  
-1\Processed data:  
+* Processed data:  
 Dataset description can be found in the file: Data_collect  
 Processed data can be downloaded from this link: [Data_collect](https://drive.google.com/file/d/1BeNPExNxbVQDOKbmvME6npDPiY0e_kG8/view?usp=sharing)   
 Please replace the "\ProphDR\Data_collect" with the downloaded "Data_collect"  
 
-2\Raw data can be downloaded from:  
+* Raw data can be downloaded from:  
 https://www.cancerrxgene.org/downloads/bulk_download  
 https://depmap.org/portal/download/all/  
 https://cancer.sanger.ac.uk/cosmic
 
 ### Run ProphDR
-1/ Preparation: Please put k_bert under Models: [k_bert](https://drive.google.com/file/d/1h-Ve-2fpYH6P8epfsHezJsxK2PRKFnc2/view?usp=drive_link)    
-2/ Customized parameters:  
+* Preparation: Please put k_bert under Models: [k_bert](https://drive.google.com/file/d/1h-Ve-2fpYH6P8epfsHezJsxK2PRKFnc2/view?usp=drive_link)    
+* Customized parameters:  
 Here we show an example of using all 3 types of multi-omics data, for other inputs combinations or tasks, please edit the "exp_params".  
 ```
 # @@@@@@@@@@@@@@@@@@@
