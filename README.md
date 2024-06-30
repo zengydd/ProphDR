@@ -36,7 +36,7 @@ pip install lifelines
 ### Data  
 * Processed data:  
 Dataset description can be found in the file: Data_collect  
-Processed data can be downloaded from this link: [Data_collect](https://drive.google.com/file/d/1BeNPExNxbVQDOKbmvME6npDPiY0e_kG8/view?usp=sharing)   
+The pretrain data for k_bert and the processed data can be downloaded from this link: [Data_collect](https://drive.google.com/file/d/1CotLTH2z8iefNqYYC3E-03mpGPQ2anYm/view?usp=sharing)   
 Please replace the "\ProphDR\Data_collect" with the downloaded "Data_collect"  
 
 * Raw data can be downloaded from:  
