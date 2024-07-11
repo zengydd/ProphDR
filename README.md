@@ -88,5 +88,12 @@ cosmic_id = [1659928]
 ```
 python run pred.py
 ```
+
+### Attention analysis visualization
+We provide an example used in our case study: Gefitinib against NSCLC cell line HCC-827 
+For important drug atoms visualization:
+```
+python run visualize.py
+```
   
 🌻 Please feel free to contact me if you have any questions: zengyundian@gmail.com   
