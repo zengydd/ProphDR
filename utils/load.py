@@ -10,6 +10,13 @@ from sklearn.impute import SimpleImputer
 from easydict import EasyDict
 from collections import defaultdict
 
+class CPU_Unpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module == 'torch.storage' and name == '_load_from_bytes':
+            return lambda b: torch.load(io.BytesIO(b), map_location='cpu')
+        else: 
+            return super().find_class(module, name)  
+
 def nested_dict_factory():
     return defaultdict(nested_dict_factory)
 
@@ -17,12 +24,20 @@ def save_pickle(data, path):
 	f = open(path, "wb")
 	pickle.dump(data, f)
 	f.close()
-
+ 
 def load_pickle(path):
-	f = open(path, "rb")
-	data = pickle.load(f)
+	if torch.cuda.is_available():
+		with open(path, 'rb') as f:
+			# Load the model onto the GPU
+			data = pickle.load(f)
+	else:
+		with open(path, 'rb') as f:
+			# Load the model on the CPU
+			data = CPU_Unpickler(f).load()
+		# 加载pickle文件并将其映射到CPU上
 	f.close()
 	return data
+
 
 def set_file(root_path, task, method, down_sample):
     if task=='binary':   
