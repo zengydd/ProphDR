@@ -90,7 +90,7 @@ python run pred.py
 ```
 
 ### Attention analysis visualization
-We provide an example used in our case study: Gefitinib against NSCLC cell line HCC-827 
+We provide an example used in our case study: Gefitinib against NSCLC cell line HCC-827  
 For important drug atoms visualization:
 ```
 python run visualize.py
